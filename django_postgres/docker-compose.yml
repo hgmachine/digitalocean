@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  django:
+    image: hgmachine/django-web-01
+    volumes: ["./django_app:/workspace"]
+    ports:   ["8181:8181", "8000:8000"]
+    command: --auth username:password
+    depends_on: ["db"]
+    networks: ["my_net"]
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+    volumes: ["./postdb/database:/var/lib/postgresql/data"]
+    ports: ["5432"]
+    networks: ["my_net"]
+
+networks:
+   my_net:

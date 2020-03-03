@@ -1,0 +1,36 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>HGM :: Seja Bem Vindo!</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <h1>Participe deste Log Book!</h1>
+    <p align='justify'>Este espaço é especilamente dedicado aos estudantes da Universidade de
+    Brasília, com os quais eu convivo nas disciplinas e cursos que ofereço a cada semestre.
+    Exponha aqui as suas dúvidas e descobertas sobre as disciplinas, projetos
+    e demais assuntos relacionados à engenharia. Os seus colegas também
+    poderão interagir com o(s) seu(s) assunto(s). Faça o seu registro e comece
+    a se interagir clicando em 'Log Book', no menu superior.</p>
+
+    <h1>Notas de aulas e avisos!</h1>
+    <p align='justify'>Sempre que necessário, no menu 'Notas', serão postadas notas complementares para aulas, avisos
+    e demais informações úteis. Sinta-se a vontade para me solicitar uma postagem que lhe seja importante.</p>
+
+{% endblock content %}
+
+{% block secundary %}
+
+    <div class="foto-rosto">
+        <img src= '{% static "learning_logs/img/foto-capa-hgm.png"%}'> 
+    </div>
+    <h1>Henrique Gomes de Moura, Dr. Eng.</h1>
+    <p>Professor da Universidade de Brasília, Campus Gama - DF.</p>
+    <p><a href= "{% url 'learning_logs:pessoal' %}">Quem sou</a></p>
+
+{% endblock secundary %}

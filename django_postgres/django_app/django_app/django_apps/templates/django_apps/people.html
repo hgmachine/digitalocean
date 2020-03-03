@@ -1,0 +1,13 @@
+<h1>Olá a todos!</h1>
+<h2>Para esta reunião, temos as pessoas:</h2>
+
+<ul>
+   
+    {% for person in pessoas %}
+        <li>{{ person.nome }}</li>
+    {% empty %}
+        <li>Ops! Não tem ninguém aqui.</li>    
+    {% endfor %}
+    <p><a href="{% url 'index' %}">Clique aqui</a></p>
+
+</ul>

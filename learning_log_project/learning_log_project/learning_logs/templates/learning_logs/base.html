@@ -1,0 +1,84 @@
+<!-- Este é o template Pai para esta aplicação -->
+
+{% load static %}
+
+<script src="{% static "learning_logs/js/jquery-3.3.1.js" %}"></script>
+<script src="{% static "learning_logs/js/my-jqueries.js" %}"></script>
+<script src="{% static "learning_logs/js/latexit.js" %}"></script>
+
+<script type="text/javascript">
+LatexIT.add('p',true);
+</script>
+
+<!doctype html>
+<html lang='pt-BR'>
+    <head>
+        <meta charset="UTF-8">
+        {% block head %} {% endblock head %}
+        <link rel="stylesheet" href="{% static 'learning_logs/css/learning_logs.css' %}?{% now 'U' %}"/>
+    </head>
+    <body id="bd-home">
+
+	    <div id="site">
+        
+            <div id="cabecalho" class="grupo">
+                <img src= '{% static "learning_logs/img/logo_empresa.png"%}' style="margin-left: -10%;">
+                <img src= '{% static "learning_logs/img/logofga.png"%}'>
+        
+                <div id="menu-principal">
+                    <p class="grupo">
+                        <a href= "{% url 'learning_logs:index' %}">Home</a>
+                        <a href= "{% url 'learning_logs:notes' %}">Notas</a>
+                        <a href= "{% url 'learning_logs:topics' %}">Log Book</a>
+                        {% if user.is_authenticated %}
+                            <span> &nbsp; &nbsp; Olá {{ user.username }} </span>
+                            <a href="{% url 'users:logout' %}">Sair</a>
+                        {% else %}
+                            <a href="{% url 'users:login' %}">Entrar</a>
+                        {% endif %}
+                    </p>
+                </div> <!-- fim menu principal -->
+
+            </div> <!-- fim cabecalho -->
+
+            <div id="foto-principal"></div> <!-- fim foto principal -->     
+      
+            <div id="conteudo" class="grupo">
+
+                <div id="conteudo-principal">
+
+                    {% block content %} <!-- child html aqui --> {% endblock content %}
+
+                </div> <!-- fim conteudo-principal --> 
+
+                <div id="conteudo-secundario">
+                    
+                    {% block secundary %} {% endblock secundary %}                    
+
+                </div>
+
+            </div> <!-- fim conteudo -->
+
+            <div id="rodape-fora">
+                <div id="rodape" class="grupo">
+                    <p id="telefone-email">
+                    hgmoura@yahoo.com/unb.br <br>
+                    <span class="ddd">(61)</span> 9-9880-6360. <br>
+                    <span class="room">Sala UED-13</span> 
+                    </p>
+                    <p id="endereco">
+                        Quadra 05 Lote 1580, Edifício Village. <br>
+                        CEP 72.445-050 <br>
+                        Gama - DF
+                    </p>
+                    <small id="copyright">
+                        &copy; Todos os Direitos Reservados.
+                    </small>        
+                </div> <!-- fim rodape -->
+
+            </div> <!-- fim rodape-fora -->
+
+        </div> <!-- fim site -->  
+
+    </body>
+</html>

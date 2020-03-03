@@ -1,0 +1,58 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>HGM :: Notas</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <style>
+
+        #conteudo-principal p {
+            font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans",
+            "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+            font-size: 16px;
+        }
+       
+        .equation {
+          float: left;
+          width: 90%;
+        }        
+ 
+        .numbering {
+          margin-right: 5%;
+          float: right;
+        }        
+
+    </style>
+
+    <div style="width: 1000px;">
+        <h1>Ementas de disciplinas:</h1>
+        <ul>
+          <li><a href= "{% url 'learning_logs:integra_testes' %}">Integração e Testes</a></li>        
+          <li><a href= "{% url 'learning_logs:proj_estrutura' %}">Projeto de Estruturas Veiculares</a></li>        
+        </ul>
+        <h1>Notas de aulas:</h1>
+        <ul>
+          <li><a href= "{% url 'learning_logs:lesson_1' %}">O método dos Mínimos Múltiplos Quadrados</a></li>        
+        </ul>
+    </div>
+    
+{% endblock content %}
+
+{% block secundary %}
+
+    <div class="foto-rosto">
+        <img src= '{% static "learning_logs/img/foto-capa-hgm.png"%}'> 
+    </div>
+    <h1>Henrique Gomes de Moura</h1>
+    <p>Professor na Universidade de Brasília, Campus Gama - DF.</p>
+    <p><a href= "{% url 'learning_logs:pessoal' %}">Quem sou</a></p>
+
+{% endblock secundary %}
+
+<a href= "{% url 'learning_logs:index' %}">Home</a>

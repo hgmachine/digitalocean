@@ -1,0 +1,32 @@
+{% extends "learning_logs/base.html" %}
+
+{% block head %}
+
+    <title>HGM :: Novo Tópico</title>
+    
+{% endblock head %}
+
+{% block content %}
+    
+    <p>Digite o nome do tópico:</p>
+    
+    <form action="{% url 'learning_logs:new_topic' %}" method='post'>
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">adicionar</button>
+        
+    </form>
+
+{% endblock content %}
+
+{% block secundary %}
+
+<script type="text/javascript">
+  var divSec= document.getElementById('conteudo-secundario');
+  var divPri= document.getElementById('conteudo-principal');
+  divSec.style.display= 'none';
+  divPri.style.width= '900px';
+</script>
+
+{% endblock secundary %}

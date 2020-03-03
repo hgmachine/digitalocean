@@ -1,0 +1,46 @@
+{% extends "learning_logs/base.html" %}
+
+{% block head %}
+
+    <title>HGM :: {{ topic }}</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <div style="width: 1000px;">
+        <h2>Tópico: {{ topic }}</h2>
+        <p><br></p>
+        <ul>
+            {% for entry in entries %}
+                <li>
+                    <p>{{ entry.date_added|date:'M d, Y H:i' }}h - escrito por: {{ entry.owner }}</p>
+                    <p>{{ entry.text|linebreaks }}</p>
+                    <p>
+                        {% if topic.owner == request.user or request.user.id == 1 %}
+                            <a href="{% url 'learning_logs:edit_entry' entry.id %}">editar comentário</a> -
+                            <a href="{% url 'learning_logs:delete_entry' entry.id %}">remover comentário</a>
+                        {% endif %}
+                    </p>
+                </li>
+            {% empty %}
+                <li>
+                    Nenhum comentário foi realizado até o momento.
+                </li>    
+            {% endfor %}
+        </ul>
+        <p>
+            {% if topic.owner == request.user or request.user.id == 1 %}
+                <a href="{% url 'learning_logs:delete_topic' topic.id %}">Remover este tópico</a> -
+            {% endif %}
+            <a href="{% url 'learning_logs:new_entry' topic.id %}">Adicionar um comentário</a>
+        </p>
+    </div>
+
+{% endblock content %}
+
+{% block secundary %}
+    
+    <span>Moderador: {{ topic.owner }}</span>
+    
+{% endblock secundary %}

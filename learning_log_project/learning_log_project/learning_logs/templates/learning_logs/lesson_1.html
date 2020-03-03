@@ -1,0 +1,167 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>HGM :: Método dos Mínimos Múltiplos Qaudrados</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <style>
+
+        #conteudo-principal p {
+            font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans",
+            "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+            font-size: 16px;
+        }
+       
+        .equation {
+          float: right;
+          width: 80%;
+        }        
+ 
+        .numbering {
+          float: left;
+          font-size: 16px;
+        }
+      
+    </style>
+
+    <!-- <h1>Aguarde ou solicite ao professor ;) <h2><br> -->
+    <p align='justify'>
+      Karl Fredrich Gauss descobriu o método dos Mínimos Múltiplos Quadrados (não foi o único matemático a conseguir de maneira independente o feito) no final do século 18 para prever a trajetória de astros a partir de observações (Coelho 2004, apud Ljung e Soderstrom, 1983).
+    </p><br>
+
+    <p align='justify'><i>
+      “O valor mais provável das gradezes desconhecidas é a que minimiza a soma dos quadrados da diferença entre os valore atualmente observados e os valores calculados multiplicados por números que medem o grau de precisão, onde quanto mais precisa a medida, maior a sua ponderação” 
+    </i></p><br>
+    
+    <p align='justify'>
+      Deste modo, Gauss estabeleceu que o conjunto de parâmetros desconhecidos de seu modelo matemático deveria ser selecionado de maneira a minimizar a soma dos erros residuais. Matematicamente:
+    </p><br>
+    
+    <div class="numbering"><span>(Eq. 1)</span></div>
+    <div lang='latex' class='equation'>
+      \{{Y}\} = [A]\{{\theta}\} + \{{\eta}\}
+    </div><br><br><br>
+    
+    <div class="numbering"><span>(Eq. 2)</span></div>
+    <div lang='latex' class='equation'>
+      J_{min} = min_{\theta}|| {\eta} ||^2
+    </div><br><br><br>
+    
+    <p align='justify'>
+      Nas expressões acima, o vetor $\{Y\}$ representa as variáveis de saída do sistema linear considerado,
+      o vetor $\{\theta\}$ representa as variáveis de entrada no mesmo sistema, e o vetor $\{\eta\}$ representa
+      os desvios gerados pela regressão, ou seja, $\{\eta\}$ = $\{Y\}$ – $[A]\{\theta\}$ - O vetor $\{\eta\}$
+      deve ser minimizada. A matriz <i>[A]</i> representa um sistema de equações lineares constituintes da regressão buscada.
+      Ou seja, se o modelo de regressão é:
+    </p><br>
+    
+    <div class="numbering"><span>(Eq. 3)</span></div>
+    <div lang='latex' class='equation'>
+      y = a_1 * x^2 + a_2 * x + a_3
+    </div><br><br><br>
+    
+    <p align='justify'>
+      Então teremos cada linha da matriz $[A]$ igual a $[x^2, x, 1]$. A matriz $[A]$ terá tantas linhas quanto ao número de pares de valores $(x, y)$. O método é bem apropriado para sistemas super-determinados, pois deste modo oferece mais informações para o modelo buscar os melhores valores para os coeficientes $a_i$ do vetor $\{\theta\}$, indicados na equação 3.  
+    </p><br>
+    
+    <p>
+      Combinando as equações 1 e 2, tem-se:
+    </p><br>
+    
+    <div class="numbering"><span>(Eq. 4)</span></div>
+    <div lang='latex' class='equation'>
+      J = [\{Y\}-[A]\{\theta\}]^T[\{Y\}-[A]\{\theta\}]
+    </div><br><br><br>
+    
+    <p>
+      Para reseolvermos a equação 4 usamos a equação 2. Seguem os cálculos.
+    </p><br>
+    
+    <div class="numbering"><span>(Eq. 5)</span></div>
+    <div lang='latex' class='equation'>
+      \dfrac{\partial J}{\partial \theta} = -2(Y^TA)^T+2A^T\theta = 0
+    </div><br><br><br>
+
+    <p>
+      Assim, o estimador dos mínimos múltiplos quadrados pode ser calculado por:
+    </p><br>
+    
+      
+    <div class="numbering"><span>(Eq. 6)</span></div>
+    <div lang='latex' class='equation'>
+      \{\theta\} = [[A]^T[A]]^{-1}[A]^T\{Y\}
+    </div><br><br><br>
+    
+    <p>
+      É importante observar que a equação 6 produzirá o mínimo valor se
+    </p><br>
+    
+    <div class="numbering"><span>(Eq. 7)</span></div>
+    <div lang='latex' class='equation'>
+      \dfrac{\partial {J}^2}{\partial {\theta}^2} = 2[A]^T[A] > 0 
+    </div><br><br><br>
+    
+    <p>
+      Ou seja, a matriz $A^TA$ deve ser não singular (full-rank).
+    </p>
+    
+  
+  
+<!--    
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mrow>
+        <mo>-</mo>
+        <mi>b</mi>
+      </mrow>
+      <mo>&#xB1;<!--PLUS-MINUS SIGN--></mo>
+<!--      <msqrt>
+        <mrow>
+          <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>-</mo>
+          <mrow>
+            <mn>4</mn>
+            <mo>&#x2062;<!--INVISIBLE TIMES--></mo>
+<!--            <mi>a</mi>
+            <mo>&#x2062;<!--INVISIBLE TIMES--></mo>
+<!--            <mi>c</mi>
+          </mrow>
+        </mrow>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <mo>&#x2062;<!--INVISIBLE TIMES--></mo>
+<!--      <mi>a</mi>
+    </mrow>
+  </mfrac>
+</mrow>
+
+    </math>
+-->
+    
+{% endblock content %}
+
+{% block secundary %}
+
+<script type="text/javascript">
+  var divSec= document.getElementById('conteudo-secundario');
+  var divPri= document.getElementById('conteudo-principal');
+  divSec.style.display= 'none';
+  divPri.style.width= '900px';
+</script>
+
+{% endblock secundary %}

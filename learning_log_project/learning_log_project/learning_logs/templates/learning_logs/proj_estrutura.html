@@ -1,0 +1,189 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>HGM :: Projeto de Estrutura de Veículos</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <style>
+
+        #conteudo-principal p {
+            font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans",
+            "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+            font-size: 16px;
+        }
+       
+        .equation {
+          float: right;
+          width: 80%;
+        }        
+ 
+        .numbering {
+          float: left;
+          font-size: 16px;
+        }
+        
+   </style>
+
+   <div class='proj_estrutura'>
+        <h2 align='center'>Faculdade UnB Gama</h2><h2 align='center'>
+        <h2 align='center'>Curso de Engenharia Automotiva</h2>
+        <h2 align='center'>Programa de Projeto de Estrutura de Veículos – Prof. Henrique G. Moura</h2><br><br>
+        
+        <h3>Descrição da disciplina:</h3><br>
+        <p align='justify'>
+            A disciplina tem como foco o desenvolvimento de técnicas analíticas e numéricas voltadas para
+o projeto e a fabricação de estruturas veiculares, tais como componentes de suspensão, chassis
+tubulares e carrocerias. A seleção de materiais, melhoria na forma, bem como peso e dimensões,
+análise ergonômicas e demais características de um projeto automotivo também são
+consideradas ao longo das avaliações ministradas. Ao longo de toda a disciplina, o aluno
+receberá informações necessárias para as atividades a serem desenvolvidas no projeto, na forma
+de aulas expositivas e práticas.
+        </p><br>
+        
+        <h3>Conteúdo:</h3><br>
+        <p>
+            <ul>
+                <li>
+                    1. Introdução
+                    <ul>
+                        <li>
+                            1.1. Evolução dos chassis veiculares
+                        </li>
+                        <li>
+                            1.2. Evolução das metodologias de projeto aplicadas aos chassis veiculares
+                        </li>
+                        <li>
+                            1.3. Tendências futuras: materiais, equipamentos e processos aplicados à
+                            indústria automotiva
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    2. Resistência de materiais
+                    <ul>
+                        <li>
+                            2.1. Teorias de resistência: revisão
+                        </li>
+                        <li>
+                            2.2. Modelos elastoplásticos
+                        </li>
+                        <li>
+                            2.3. Carregamentos dinâmicos
+                        </li>
+                        <li>
+                            2.4. Teorias de resistência aplicadas ao projeto de elementos estruturais em um
+                            veículo
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    3. Atividade de laboratório
+                    <ul>
+                        <li>
+                            3.1. Modelagem numérica de estruturas veiculares
+                        </li>
+                        <li>
+                            3.2. Simulação dinâmica de estruturas veiculares
+                        </li>
+                        <li>
+                            3.3. Estudo de caso
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    4. Técnicas experimentais aplicadas ao projeto de estruturas veiculares
+                    <ul>
+                        <li>
+                            4.1. Análise de Caminhos de Transferência de Ruído
+                        </li>
+                        <li>
+                            4.2. Testes de Flexão/Torção em chassis veiculares
+                        </li>
+                        <li>
+                            4.3. Testes de durabilidade
+                        </li>
+                        <li>
+                            4.4. Testes de identificação
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    5. Apresentação de projeto final
+                </li>
+            </ul>
+        </p>
+        
+        <h3>Critérios de avaliação:</h3><br>
+        
+        <p align='justify'>
+            Um total de 40,0 pontos será distribuído em duas provas (valendo 20 pontos cada), programadas
+com antecedência mínima de 1 mês. Outros 60,0 pontos são atribuídos às atividades práticas do
+curso, dentre as quais se encontram os trabalhos desenvolvidos em plataforma CAD/CAE e o
+projeto final – mediante à entrega de relatórios parciais e final.
+        </p><br>
+        
+        <h3>Bibliografia:</h3><br>
+        
+        <p>
+            <ul>
+                <li>
+                    Resistência dos Materiais; Hibbeler R. C.; Pearson; 2010.
+                </li>
+                <li>
+                    The Automotive Chassis Vol. 1 – Components Design; Genta G. & Morello L.; Springer; 2009.
+                </li>
+                <li>
+                    Design de Transportes: Arte Em Função da Mobilidade – Prof. Larica J. – 2AB Editora,
+                    2009.
+                </li>
+                <li>
+                    Chassis Design – Principles and Analysis (Prof. Olley M.); Millken & Milliken; SAE; 2002.
+                </li>
+                <li>
+                    An Introduction to Modern Vehicle Design; Happian-Smith; SAE; 2001.
+                </li>
+                <li>
+                    Racing And Sport Car Chassis Design; Costin M. & Phipps D.; B. T. Batsford LTD; 1965.
+                </li>
+                <li>
+                    Tires, Suspension And Handling. Dixon, J. C. SAE international ISBN 9781560918318;
+                </li>
+                <li>
+                    Race Car Vehicle Dynamics. William F. M. SAE INTERNATIONAL ISBN 9781560915263.
+                </li>
+            </ul>
+        </p>
+        
+        <h3>Materiais Complementares:</h3><br>
+        
+        <p>
+            <ul>
+                <li>
+                    Nicolazzi, Lauro Cesar. Introdução à teoria de veículos. Florianópolis, abril de 2007.
+                </li>
+                <li>
+                    Gillespie, Thomas D. Fundamentals of Vehicle Dynamics, Warrendale, PA: Society of
+Automotive Engineers, c1992. SAE Internacional.
+                </li>
+            </ul>
+        </p>
+   </div>
+
+{% endblock content %}
+
+{% block secundary %}
+
+<script type="text/javascript">
+  var divSec= document.getElementById('conteudo-secundario');
+  var divPri= document.getElementById('conteudo-principal');
+  divSec.style.display= 'none';
+  divPri.style.width= '900px';
+</script>
+
+{% endblock secundary %}

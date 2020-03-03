@@ -1,0 +1,31 @@
+{% extends "learning_logs/base.html" %}
+
+{% block head %}
+
+    <title>HGM :: Novo Comentário</title>
+    
+{% endblock head %}
+
+{% block content %}
+    
+    <p>
+        <a href="{ url 'learning_logs:topic' topic.id }">{{ topic }}</a>
+    </p>
+    
+    <p>Escreva aqui o seu comentário:</p>
+    <form action="{% url 'learning_logs:new_entry' topic.id %}" method='post'>
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">adicionar</button>
+        
+    </form>
+    
+
+{% endblock content %}
+
+{% block secundary %}
+    
+    <span>Moderador: {{ topic.owner }}</span>
+    
+{% endblock secundary %}

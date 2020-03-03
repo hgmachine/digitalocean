@@ -1,0 +1,192 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>HGM :: Integração e Testes</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <style>
+
+        #conteudo-principal p {
+            font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans",
+            "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+            font-size: 16px;
+        }
+       
+        .equation {
+          float: right;
+          width: 80%;
+        }        
+ 
+        .numbering {
+          float: left;
+          font-size: 16px;
+        }
+        
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+    .tg .tg-baqh{text-align:center;vertical-align:top}
+    .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+      
+    </style>
+
+   <div class='integra_testes'>
+       
+        <h2 align='center'>Faculdade UnB Gama</h2><h2 align='center'>
+        <h2 align='center'>Curso de Engenharia Automotiva</h2>
+        <h2 align='center'>Programa de Integração e Testes – Prof. Henrique G. Moura</h2><br><br>
+        
+        <h3>Objetivos da disciplina:</h3><br>
+        <p>
+            <ul>
+                <li>
+                Fornecer ao estudante ferramentas direcionadas à elaboração, análise e experimentação de
+                projetos de engenharia.
+                </li>
+                <li>
+                Revisar e apresentar novos conceitos oriundos da estatística aplicada à engenharia, no sentido da
+                melhoria da qualidade, e da redução do tempo na experimentação.
+                </li>
+                <li>
+                Promover a integração de conhecimentos com o objetivo de validar modelos de engenharia e
+                protótipos, propiciando a geração de soluções capazes de resolver problemas multidisciplinares.
+                    
+                </li>
+            </ul>
+        </p>
+        
+        <h3>Conteúdo:</h3><br>
+        
+        <table class="tg">
+          <tr>
+            <th class="tg-0pky">#</th>
+            <th class="tg-0lax">Conteúdos</th>
+            <th class="tg-0lax">Avaliações<br></th>
+            <th class="tg-0lax">Duração<br></th>
+          </tr>
+          <tr>
+            <td class="tg-0pky">1</td>
+            <td class="tg-0lax">Ferramentas Para Elaboração e Análise de Projetos</td>
+            <td class="tg-baqh" rowspan="3"><br><br>1a Prova</td>
+            <td class="tg-0lax" rowspan="3"><br><br>5 semanas</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">2</td>
+            <td class="tg-0lax">Revisão de Estatística com Aplicação em Testes de Confiabilidade</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">3</td>
+            <td class="tg-0lax">Variação e Confiabilidade em Engenharia</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">4</td>
+            <td class="tg-0lax">Princípios de Testes de Confiabilidade</td>
+            <td class="tg-baqh" rowspan="3"><br><br>2a Prova<br></td>
+            <td class="tg-0lax" rowspan="3"><br><br>5 semanas<br></td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">5</td>
+            <td class="tg-0lax">Noções Sobre Testes Acelerados</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">6</td>
+            <td class="tg-0lax">Testes Durante Serviço</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">7</td>
+            <td class="tg-0lax">Gerenciamento de Um Programa de Testes de Confiabilidade</td>
+            <td class="tg-baqh" rowspan="3"><br><br>3a Prova</td>
+            <td class="tg-0lax" rowspan="3"><br><br>5 semanas</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">8</td>
+            <td class="tg-0lax">Coleta e Análise de Dados Experimentais</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">9</td>
+            <td class="tg-0lax">Introdução à Manutenção Preditiva</td>
+          </tr>
+        </table><br>
+        
+        <h3>Planejamento Pedagógico:</h3><br>
+        <p>
+            <ul>
+                <li>
+                    "Peer Instruction" nos primeiros conteúdos da disciplina (1a prova).
+                </li>
+                <li>
+                    Aulas expositivas e experimentais direcionadas aos demais conteúdos.
+                </li>
+                <li>
+                    Aulas demonstrativas direcionadas à utilização de quaisquer ferramentas
+                    computacionais necessárias para o processamento de dados.
+                </li>
+            </ul>
+        </p>
+        
+        <h3>Avaliações:</h3><br>
+        <p>
+            <ul>
+                <li>
+                    80,0 pontos para serem distribuídos em avaliações teóricas, marcadas com no mínimo uma (1)
+                    semana de antecedência.
+                </li>
+                <li>
+                    20,0 pontos para serem distribuídos em atividades de laboratório, realizadas durante os horários de
+                    aula ou nos laboratórios da FGA.
+                </li>
+                <li>
+                    O aluno será considerado aprovado se conseguir totalizar, ao final do semestre, no mínimo 50,0
+                    pontos, com no mínimo 75% de presença nas aulas ministradas.
+                </li>
+                <li>
+                    Os conteúdos 7, 8 e 9 são optativos para o aluno que, tendo o aproveitamento mínimo de 50,0
+                    pontos, poderá ter as suas faltas abonadas a partir da data da segunda prova.
+                </li>
+            </ul>
+        </p>
+        
+        <h3>Bibliografia:</h3><br>
+        <p>
+            <ul>
+                <li>
+                    Estatística Aplicada e Probabilidade Para Engenheiros (Montgomery, 5a ed, 2009).
+                </li>
+                <li>
+                    Accelerated Testing: A Practitioner’s Guide To Accelerated And Reliability Testing (Dobson &
+                    Schwab, 2006).
+                </li>
+                <li>
+                    Test Engineering: A Concise Guide to Cost-effective Design, Development and Manufacture
+                    (O’Connor, 2001).
+                </li>
+                <li>
+                    Fundamentos da Teoria de Erros (Vuolo, 1996)
+                </li>
+                <li>
+                    Manutenção Preditiva Usando Análise de Vibrações (Adyles, 1 ed, 2004). 
+                </li>
+            </ul>
+        </p>
+
+   </div>
+
+{% endblock content %}
+
+{% block secundary %}
+
+<script type="text/javascript">
+  var divSec= document.getElementById('conteudo-secundario');
+  var divPri= document.getElementById('conteudo-principal');
+  divSec.style.display= 'none';
+  divPri.style.width= '900px';
+</script>
+
+{% endblock secundary %}

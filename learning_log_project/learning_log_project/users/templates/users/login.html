@@ -1,0 +1,57 @@
+{% extends "learning_logs/base.html" %}
+
+{% block head %}
+
+    <title>HGM :: Seja Bem Vindo!</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <h1>Login:</h1>
+
+    {% if form.errors %}
+        <p>Seu nome ou senha não conferem. Por favor, tente novamente.</p>
+    {% endif %}
+    
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Ops! Você parece não ter acesso a este site. Favor solicitar acesso
+            ao administrador, através do email hgmoura@yahoo.com.
+            </p>
+        {% endif %}
+    {% endif %}
+    
+    <form method="post" action= "{% url 'users:login' %}">
+        {% csrf_token %}
+        <div class="fieldWrapper">
+            {{ form.username.errors }}
+            <p>Atenção! Este cadastro é pessoal e intransferível.</p>
+            <p>
+                <label for="id_username">Usuário:</label>
+                {{ form.username }}
+            </p>
+        </div>
+        <div class="fieldWrapper">
+            {{ form.password.errors }}
+            <p>
+                <label for="id_username">Senha:</label>
+                {{ form.password }}
+            </p>
+        </div>
+        <p><button name="submit">Entrar</button></p>
+        <input type="hidden" name="next" value="{% url 'learning_logs:topics' %}">
+    </form>
+
+{% endblock content %}
+
+{% block secundary %}
+
+<script type="text/javascript">
+  var divSec= document.getElementById('conteudo-secundario');
+  var divPri= document.getElementById('conteudo-principal');
+  divSec.style.display= 'none';
+  divPri.style.width= '900px';
+</script>
+
+{% endblock secundary %}

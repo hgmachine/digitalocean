@@ -1,0 +1,39 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>HGM :: Tópicos</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <h1>Tópicos:</h1>
+
+    <ul>
+        {% for topic in topics %}
+            <li>
+            <p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></p>
+                <span>Escrito por: {{ topic.owner }} </span>
+            </li>
+        {% empty %}
+            <li>Nenhum tópico foi adicionado ainda.</li>
+        {% endfor %}
+    </ul>
+    
+    <p><a href="{% url 'learning_logs:new_topic' %}">Adicione um novo tópico</a></p>
+
+{% endblock content %}
+
+{% block secundary %}
+
+    <div class="foto-rosto">
+        <img src= '{% static "learning_logs/img/foto-capa-hgm.png"%}'> 
+    </div>
+    <h1>Henrique Gomes de Moura</h1>
+    <p>Professor na Universidade de Brasília, Campus Gama - DF.</p>
+    <p> <a href="saibamais">Quem sou</a> </p>
+
+{% endblock secundary %}

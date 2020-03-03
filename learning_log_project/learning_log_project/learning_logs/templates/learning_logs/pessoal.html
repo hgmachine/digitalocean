@@ -1,0 +1,55 @@
+{% extends "learning_logs/base.html" %}
+
+{% load static %}
+
+{% block head %}
+
+    <title>HGM :: Informações Pessoais</title>
+    
+{% endblock head %}
+
+{% block content %}
+
+    <style>
+
+        #conteudo-principal p {
+            font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans",
+            "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+            font-size: 16px;
+        }
+        
+    </style>
+
+    <h1 align='justify'>Quem sou..</h1>
+    <p>Professor, estudante e, acima de tudo, um amante da engenharia. Atualmente, ministro as
+    disciplinas de "Projeto de Estruturas de Veículos" e "Integração e Testes", do curso de Engenharia
+    Automotiva da Faculdade UnB Gama. Também estou no caminho de concluir meus estudos de graduação em
+    Engenharia Eletrônica, na própria instituição. No momento, tenho projetos e trabalhos distribuídos
+    nas áreas: <br><br>
+        <ul>
+            <li>Segurança Veicular: Problemas de Consumo (DENATRAN)</li>
+            <li>Projeto de Estruturas Veiculares</li>
+            <li>Acústica e Vibrações Veiculares</li>
+            <li>Engenharia de Testes</li>
+            <li>Engenharia Eletrônica</li>
+            <li>Engenharia de Software</li>
+            <li>Ensino de Engenharia</li>
+        </ul>
+        <a href="http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4764451P7">Currículo Lattes</a><br>
+        <a href="http://orcid.org/0000-0001-5975-653X">Currículo ORCID</a>
+    </p>
+
+{% endblock content %}
+
+{% block secundary %}
+
+    <div class="foto-rosto">
+        <img src= '{% static "learning_logs/img/foto-capa-hgm.png"%}'> 
+    </div>
+    <h1>Henrique Gomes de Moura, Dr. Eng.</h1>
+    <p>Professor na Universidade de Brasília, Campus Gama - DF.</p>
+    <p><a href= "{% url 'learning_logs:pessoal' %}">Quem sou</a></p>
+
+{% endblock secundary %}
+
+<a href= "{% url 'learning_logs:index' %}">Home</a>
